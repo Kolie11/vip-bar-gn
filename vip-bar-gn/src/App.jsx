@@ -1,4 +1,3 @@
-import React from 'react'
 import NavBar from './components/NavBar'
 import { Route, Routes } from 'react-router-dom'
 import Footer from './components/Footer'
