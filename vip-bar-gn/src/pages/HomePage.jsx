@@ -2,7 +2,7 @@ import { Star, Music, Users } from 'lucide-react'
 
 function HomePage() {
   return (
-    <div className='bg-black'>
+    <div>
       <section className='hero'>
         <div className='hero-content'>
           <div className='hero-badge'>

@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { MenuIcon, X } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 
 function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,34 +36,25 @@ function NavBar() {
 
         <div className="flex gap-4 items-center">
           <div>
-            <button
-              className="cursor-pointer px-6 text-black bg-gold py-2 rounded transition"
-              style={{ transition: "all 0.3s" }}
-              onMouseEnter={(e) =>
-                (e.target.style.backgroundColor = "var(--gold-light)")
-              }
-              onMouseLeave={(e) =>
-                (e.target.style.backgroundColor = "var(--gold)")
-              }
-            >
-              {" "}
+            <button className="cursor-pointer px-6 text-on-gold bg-gold py-2 rounded transition">
               Réserver une Table
             </button>
           </div>
           <div className="hidden md:flex gap-2">
             <button
               onClick={() => setSelectedLang("fr")}
-              className={`px-6 py-1 border border-gold rounded cursor-pointer ${selectedLang === "fr" ? "bg-gold text-black" : "text-gold"}`}
+              className={`px-6 py-1 border border-gold rounded cursor-pointer ${selectedLang === "fr" ? "bg-gold text-on-gold" : "text-gold"}`}
             >
               FR
             </button>
             <button
               onClick={() => setSelectedLang("en")}
-              className={`px-6 py-1 border border-gold rounded cursor-pointer ${selectedLang === "en" ? "bg-gold text-black" : "text-gold"}`}
+              className={`px-6 py-1 border border-gold rounded cursor-pointer ${selectedLang === "en" ? "bg-gold text-on-gold" : "text-gold"}`}
             >
               EN
             </button>
           </div>
+          <ThemeToggle />
           <button
             size={24}
             className="md:hidden text-gold cursor-pointer transition"
@@ -115,13 +107,13 @@ function NavBar() {
           <div className="flex gap-2 pt-4 border-t border-dark-border">
             <button
               onClick={() => setSelectedLang("fr")}
-              className={`px-3 py-1 border border-gold rounded cursor-pointer ${selectedLang === "fr" ? "bg-gold text-black" : "text-gold"}`}
+              className={`px-3 py-1 border border-gold rounded cursor-pointer ${selectedLang === "fr" ? "bg-gold text-on-gold" : "text-gold"}`}
             >
               FR
             </button>
             <button
               onClick={() => setSelectedLang("en")}
-              className={`px-3 py-1 border border-gold rounded cursor-pointer ${selectedLang === "en" ? "bg-gold text-black" : "text-gold"}`}
+              className={`px-3 py-1 border border-gold rounded cursor-pointer ${selectedLang === "en" ? "bg-gold text-on-gold" : "text-gold"}`}
             >
               EN
             </button>
